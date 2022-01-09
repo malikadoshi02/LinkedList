@@ -1,59 +1,70 @@
+
 package com.company;
 
-public class Car {
-    private Make make;
-    private String owner;
+public class CarListNode {
+    private Car data;
+    private CarListNode next;
+    private CarListNode prev;
 
     /**
-     * private variables to store
-     * @param make
-     * @param owner
+     *This CarListNode has been initialized to wrap the indicated Car, and prev and next have been set to null.
+     * @param initData
+     * @throws IllegalArgumentException
      */
-    public Car (Make make, String owner){
-        this.make = make;
-        this.owner = owner;
+    public CarListNode(Car initData) throws IllegalArgumentException{
+        if (initData != null){
+            prev = null;
+            next = null;
+            data = initData;
+        }
+        else if (initData == null)
+            throw new IllegalArgumentException();
     }
 
     /**
-     * gets Owner
+     * gets data
      * @return
      */
-    public String getOwner() {
-        return owner;
+    public Car getData() {
+        return data;
     }
 
     /**
-     * sets owner
-     * @param owner
+     * set data
+     * @param data
      */
-    public void setOwner(String owner) {
-        this.owner = owner;
+    public void setData(Car data) {
+        this.data = data;
     }
-
     /**
-     * gets make of vehicle
+     * get next obj
      * @return
      */
-    public Make getMake() {
-        return make;
+    public CarListNode getNext() {
+        return next;
     }
 
     /**
-     * sets Make of vehicle
-     * @param make
+     * set next obj
+     * @param next
      */
-    public void setMake(Make make) {
-        this.make = make;
+    public void setNext(CarListNode next) {
+        this.next = next;
     }
 
     /**
-     * stores make and owner as a string
+     * get previous obj
      * @return
      */
-    public String toString() {
-        return "Car: " +
-                "make: " + make +
-                ", owner: '" + owner + '\'' +
-                '}';
+    public CarListNode getPrev() {
+        return prev;
+    }
+
+    /**
+     * set previous
+     * @param prev
+     */
+    public void setPrev(CarListNode prev) {
+        this.prev = prev;
     }
 }
