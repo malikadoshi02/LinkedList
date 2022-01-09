@@ -1,10 +1,59 @@
-
 package com.company;
 
-/**
- * Stores care makes as an enum
- */
-    public enum Make {
-        FORD, GMC, CHEVY, JEEP, DODGE, CHRYSLER, LINCOLN
+public class Car {
+    private Make make;
+    private String owner;
+
+    /**
+     * private variables to store
+     * @param make
+     * @param owner
+     */
+    public Car (Make make, String owner){
+        this.make = make;
+        this.owner = owner;
     }
 
+    /**
+     * gets Owner
+     * @return
+     */
+    public String getOwner() {
+        return owner;
+    }
+
+    /**
+     * sets owner
+     * @param owner
+     */
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    /**
+     * gets make of vehicle
+     * @return
+     */
+    public Make getMake() {
+        return make;
+    }
+
+    /**
+     * sets Make of vehicle
+     * @param make
+     */
+    public void setMake(Make make) {
+        this.make = make;
+    }
+
+    /**
+     * stores make and owner as a string
+     * @return
+     */
+    public String toString() {
+        return "Car: " +
+                "make: " + make +
+                ", owner: '" + owner + '\'' +
+                '}';
+    }
+}
